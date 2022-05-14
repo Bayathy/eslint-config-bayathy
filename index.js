@@ -8,12 +8,7 @@ module.exports ={
     'plugin:import/errors',
     'plugin:import/react',
     'plugin:import/typescript',
-    'plugin:react-hooks/recommended'
-  ],
-  rules: {
-    "@typescript-eslint/no-non-null-assertion": 'off',
-    "react/react-in-jsx-scope": 'off',
-    "unicorn/filename-case": 'off',
-    "unicorn/prevent-abbreviations": 'off'
-  }
+    'plugin:react-hooks/recommended',
+    'plugin:unused-imports'
+  ]
 }
