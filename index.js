@@ -9,6 +9,14 @@ module.exports ={
     'plugin:import/react',
     'plugin:import/typescript',
     'plugin:react-hooks/recommended',
-    'plugin:unused-imports'
-  ]
+  ],
+  plugins: [
+    'unused-imports'
+  ],
+  rules: {
+    "@typescript-eslint/no-non-null-assertion": 'off',
+    "react/react-in-jsx-scope": 'off',
+    "unicorn/filename-case": 'off',
+    "unicorn/prevent-abbreviations": 'off',
+  }
 }
