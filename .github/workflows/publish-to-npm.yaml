@@ -19,10 +19,6 @@ jobs:
           always-auth: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }} 
-      - name: Update version
-        run: npm version patch
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - name: Can Publish
         run: npx can-npm-publish --verbose
         env:
