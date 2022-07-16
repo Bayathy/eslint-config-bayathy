@@ -18,5 +18,7 @@ module.exports ={
     "react/react-in-jsx-scope": 'off',
     "unicorn/filename-case": 'off',
     "unicorn/prevent-abbreviations": 'off',
+    "unused-imports/no-unused-imports": "error",
+    "no-unused-vars": "off",
   }
 }
