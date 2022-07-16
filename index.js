@@ -4,11 +4,11 @@ module.exports ={
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:unicorn/recommended',
-    'prettier',
     'plugin:import/errors',
     'plugin:import/react',
     'plugin:import/typescript',
     'plugin:react-hooks/recommended',
+    'prettier'
   ],
   plugins: [
     'unused-imports'
