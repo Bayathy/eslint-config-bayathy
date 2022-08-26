@@ -8,6 +8,7 @@ module.exports ={
     'plugin:import/react',
     'plugin:import/typescript',
     'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
     'prettier'
   ],
   plugins: [
