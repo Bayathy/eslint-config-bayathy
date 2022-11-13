@@ -18,7 +18,9 @@ jobs:
           scope: "eslint-config-bayathy"
           always-auth: true
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }} 
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+      - name: update patch version
+        run: npm version patch 
       - name: Can Publish
         run: npx can-npm-publish --verbose
         env:
