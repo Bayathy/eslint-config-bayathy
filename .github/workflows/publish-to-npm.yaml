@@ -13,14 +13,17 @@ jobs:
       - name: Use Node.js And Setup .npmrc
         uses: actions/setup-node@v3
         with:
-          node-version: "12.x"
+          node-version: "16.x"
           registry-url: "https://registry.npmjs.org"
           scope: "eslint-config-bayathy"
           always-auth: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - name: update patch version
-        run: npm version patch 
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          npm version patch 
       - name: Can Publish
         run: npx can-npm-publish --verbose
         env:
