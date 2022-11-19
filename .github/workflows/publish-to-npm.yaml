@@ -24,6 +24,8 @@ jobs:
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           npm version patch 
+          git add .
+          git commit -m "update version"
       - name: Can Publish
         run: npx can-npm-publish --verbose
         env:
