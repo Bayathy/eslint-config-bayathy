@@ -29,8 +29,6 @@ jobs:
           npm version patch
       - name: push
         run: |
-          git add .;
-          git commit -m "run actions";
           git push origin HEAD:${GITHUB_REF};
       - name: Can Publish
         run: npx can-npm-publish --verbose
