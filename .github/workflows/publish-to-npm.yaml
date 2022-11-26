@@ -26,11 +26,9 @@ jobs:
           git pull  origin master
       - name: update patch version
         run: |
-          if (git diff --shortstat | grep '[0-9]'); then \
-            git add .; \
-            git commit -m "GitHub Actions から差分を Push"; \
-            git push origin HEAD:${GITHUB_REF}; \
-          fi
+          git add .
+          git commit -m "run actions"
+          git push origin HEAD:${GITHUB_REF}
           npm version patch 
       - name: Can Publish
         run: npx can-npm-publish --verbose
