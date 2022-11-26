@@ -19,11 +19,13 @@ jobs:
           always-auth: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
-      - name: update patch version
+      - name: set up Git
         run: |
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git push origin master
+          git pull  origin master
+      - name: update patch version
+        run: |
           npm version patch 
           git add .
           git commit -m "update version"
