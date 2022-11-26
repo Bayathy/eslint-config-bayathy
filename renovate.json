@@ -6,24 +6,5 @@
   ],
   "pin": {
     "automerge": true
-  },
-  "packageRules": [
-    {
-      "groupName": "types",
-      "packagePatterns": ["^@types/"],
-      "automerge": true,
-      "major": {
-        "automerge": false
-      }
-    },
-    {
-      "groupName": "linters",
-      "extends": ["packages:linters"],
-      "packagePatterns": ["^@typescript-eslint/"],
-      "automerge": true,
-      "major": {
-        "automerge": false
-      }
-    }
-  ]
+  }
 }
