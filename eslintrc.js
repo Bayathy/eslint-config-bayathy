@@ -1,6 +1,7 @@
 module.exports = {
   extends: [
     "eslint:recommended",
+    "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:unicorn/recommended",
@@ -8,33 +9,51 @@ module.exports = {
     "plugin:jsx-a11y/recommended",
     "plugin:import/recommended",
     "plugin:react/jsx-runtime",
-    "prettier"
+    "prettier",
   ],
-  rules:{
-    'import/order': [
-      'error',
+  settings: {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx "],
+    },
+  },
+  parser: '@typescript-eslint/parser',
+  rules: {
+    "import/order": [
+      "error",
       {
-        groups: ['builtin', 'external', 'parent', 'sibling', 'index', 'object', 'type'],
+        groups: [
+          "builtin",
+          "external",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type",
+        ],
         pathGroups: [
           {
-            pattern: '{react,react-dom/**,react-router-dom}',
-            group: 'builtin',
-            position: 'before',
+            pattern: "{react,react-dom/**,react-router-dom}",
+            group: "builtin",
+            position: "before",
           },
           {
-            pattern: 'src/**',
-            group: 'parent',
-            position: 'before',
+            pattern: "src/**",
+            group: "parent",
+            position: "before",
           },
         ],
-        pathGroupsExcludedImportTypes: ['builtin'],
+        pathGroupsExcludedImportTypes: ["builtin"],
         alphabetize: {
-          order: 'asc',
+          order: "asc",
         },
-        'newlines-between': 'always',
+        "newlines-between": "always",
       },
     ],
-    '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
-    '@typescript-eslint/no-unused-vars': ["error", { "args": "all" }]
-  }
-}
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      { prefer: "type-imports" },
+    ],
+    "@typescript-eslint/no-unused-vars": ["error", { args: "all" }],
+  },
+};
+

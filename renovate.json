@@ -3,12 +3,10 @@
   "extends": ["config:base", ":timezone(Asia/Tokyo)"],
   "labels": ["dependencies", "renovate"],
   "schedule": ["every weekend"],
-
+  
   "packageRules": [
     {
-      "matchDepTypes": [
-        "devDependencies"
-      ],
+      "matchDatasources": ["npm"],
       "matchUpdateTypes": [
         "minor", 
         "patch", 
