@@ -11,6 +11,9 @@ module.exports = {
     "plugin:react/jsx-runtime",
     "prettier",
   ],
+  plugins: [
+    "unused-imports"
+  ],
   settings: {
     "import/parsers": {
       "@typescript-eslint/parser": [".ts", ".tsx "],
@@ -18,6 +21,11 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   rules: {
+    "unused-imports/no-unused-imports": "error",
+		"unused-imports/no-unused-vars": [
+			"warn",
+			{ "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+		],
     "import/order": [
       "error",
       {
@@ -66,6 +74,9 @@ module.exports = {
     'jsx-a11y/aria-unsupported-elements': 'warn',
     'jsx-a11y/role-has-required-aria-props': 'warn',
     'jsx-a11y/role-supports-aria-props': 'warn',
+    'prefer-object-spread': 'error',
+    'prefer-template': 'error',
+    'keyword-spacing': ["error", { "before": true }]
   },
 };
 
